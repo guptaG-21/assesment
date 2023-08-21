@@ -9,14 +9,15 @@ const FilteringData = () => {
   const [priceRangeFilter, setPriceRangeFilter] = useState("");
   const [sortOption, setSortOption] = useState("name");
 
+  //axios for api consumption
   useEffect(() => {
     axios.get("https://dummyjson.com/products").then((response) => {
       setProducts(response.data.products);
       setFilteredProducts(response.data.products);
     });
   }, []);
-  console.log(products);
 
+  //for all the filtered data
   useEffect(() => {
     // setting the category filter
     let filtered = products;
@@ -61,7 +62,7 @@ const FilteringData = () => {
             className='border p-2 rounded'
           >
             <option value=''>All</option>
-            {/* Add unique categories from products */}
+            {/* Add unique categories from products (set adds only unique elements) */}
             {Array.from(
               new Set(products.map((product) => product.category))
             ).map((category) => (

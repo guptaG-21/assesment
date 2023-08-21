@@ -1,4 +1,4 @@
-// src/components/ProductCard.js
+//a single card of the product
 import React from "react";
 
 const ProductCard = ({ product }) => {

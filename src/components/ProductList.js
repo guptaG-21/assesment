@@ -1,4 +1,4 @@
-// src/components/ProductList.js
+//this is showing the all cards of the products
 import React from "react";
 import ProductCard from "./ProductCard";
 
